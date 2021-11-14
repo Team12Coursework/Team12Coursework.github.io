@@ -248,7 +248,7 @@ footer > div{
 .container{
   max-width: 1170px;
   margin: auto;
-
+  width: 100%;
 }
 ul{
   list-style: none;
@@ -256,6 +256,7 @@ ul{
 .row{
   display:flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 .footer-col {
 width: 25%;
@@ -319,6 +320,7 @@ margin-bottom: 30px;
   color: #000000;
   display: block;
   transition: all 0.3s ease;
+  width: 100%;
 }
 /*changes colour to when hovered*/
 .footer-col ul li a:hover{
