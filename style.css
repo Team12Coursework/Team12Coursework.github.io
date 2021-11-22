@@ -108,7 +108,7 @@ main{
   transform: scale(1.2) translate(-40%, -40%);
 }
 
-.basic-info, .gameplay{
+.basic-info, .gameplay, .blog-posts{
   margin: 2em;
   display: flex;
 }
@@ -141,6 +141,137 @@ main{
   text-align: center;
 }
 
+/* Blog stuff */
+
+.blog-posts{
+  flex-direction: column;
+}
+
+.blog-posts > div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.blog-posts > div > a{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: black;
+  text-decoration: none;
+}
+
+.blog-posts > div > a > img{
+  padding-top: 1em;
+}
+
+.blog-posts-upper{
+  display: flex;
+  padding: 0.5em 25px;
+  gap: 10px;
+}
+
+.blog-posts-upper > div{
+  padding: 0 5px;
+}
+
+.blog-posts-date {
+  background-color: rgb(173, 216, 230);
+}
+
+.blog-posts-monthly {
+  background-color: rgb(240, 128, 128);
+}
+
+.blog-posts-future {
+  background-color: rgb(203, 195, 227);
+}
+
+.blog-posts-lower {
+  padding: 0 25px 0.5em 25px;
+}
+
+.blog-posts-title {
+  font-weight: bold;
+}
+
+/* Blog stuff end */
+
+/* Post stuff */
+
+.post-container {
+  box-shadow: 16px 23px 52px 0px rgb(0 0 0 / 12%);
+  padding: 1em 6em;
+  margin: auto;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  border-radius: 2em;
+  transition: 0.3s all;
+  background:white;
+  max-width: 1200px;
+}
+
+.post-container > h2, p {
+  text-align: center;
+}
+
+.post-container > video, img {
+  display: block;
+  margin: 0 auto;
+}
+
+.post-container:hover{
+  box-shadow: 1px 3px 15px grey;
+}
+/* Post stuff end */
+
+/* Contact Us stuff */
+
+.contact-container {
+  display: flex;
+  border-radius: 2em;
+  padding: 2em;
+  flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: black;
+  text-decoration: none;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.contact-container:hover{
+  box-shadow: 1px 3px 15px grey;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin-left: 100px;
+  grid-gap: 10px;
+}
+
+.career-info {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-left: 100px;
+  grid-gap: 10px;
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-gap: 10px;
+}
+
+.contacts > p{
+  display: block;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Contact Us stuff end */
+
 .basic-info > div{
   width: 50%;
 }
@@ -167,13 +298,14 @@ main{
 }
 
 .slideshow img,
-.gameplay img{
+.gameplay img,
+.blog-posts img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.gameplay img{
+.gameplay img, .blog-posts img{
   height: 300px;
   object-fit: contain;
 }
@@ -214,7 +346,7 @@ footer > div{
 .main-container{
   text-align:justify;
   max-width: 1200px;
-    margin: auto;
+  margin: auto;
 }
 .main-container img{
   object-fit: contain;
