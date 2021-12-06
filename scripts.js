@@ -22,6 +22,16 @@ $(document).ready(function() {
     $('#menu-toggle').on('click', function(){
     	$('#top-bar').toggleClass('opened');
     })
+
+    var j = 0;
+    setInterval(function(){
+      $('.team-member.active').removeClass('active');
+      $('.team-member').eq(j).addClass('active');
+      j++;
+      if(j == ($('.team-member').length)){
+        j = 0;
+      }
+    }, 3500);
 });
 
 function moveImagesRight(){

@@ -13,6 +13,7 @@ body{
 h2{
 	color: black;
 	font-size: 4em;
+	text-align: center;
 }
 header{
 	z-index: 2;
@@ -23,6 +24,9 @@ header{
 }
 body.blog header{
 	background: white;
+}
+body.blog h3{
+	text-align: center;
 }
 body.blog video{
 	width: 100%;
@@ -286,37 +290,46 @@ body:not(.blog) #blog h2{
 
 .team-members{
 	display: flex;
-	flex-wrap: wrap;
-	gap: 1em;
-	text-align: center;
 }
 
 .team-member{
-	margin-top: 1em;
-	padding: 2em 0;
-	width: calc(25% - 3em/4);
-	transition: 0.3s all;
+	width: 20px;
+	overflow: hidden;
+	transition: 2s all;
+	text-align: center;
 }
 
-.team-member:hover{
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+.team-member.active{
+	width: calc(100% - 160px);
 }
 
 .team-member img{
-	height: 10em;
-	width: 10em;
-	border-radius: 50%;
-	object-fit: cover;
+	/*width: 100%;*/
+	height: 400px;
+	text-align: center;
+	/*object-fit: cover;*/
+	object-position: top;
 }
 
 .team-member h3{
 	margin-bottom: 0;
+	font-size: 1px;
+	transition: 0.3s all;
+}
+
+.team-member.active h3{
+	font-size: 1em;
 }
 
 .team-member h4{
 	color: lightgrey;
     font-weight: normal;
     margin: 0;
+    font-size: 1px;
+}
+
+.team-member.active h4{
+	font-size: 0.8em;
 }
 
 #menu-toggle{
@@ -381,6 +394,15 @@ body:not(.blog) #blog h2{
 }
 .blog-post:hover{
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+header nav a{
+	transition: 0.3s all;
+}
+
+header nav a:hover{
+	color: gray;
+	opacity: 0.8;
 }
 
 @media only screen and (max-width: 1220px) {

@@ -1,0 +1,43 @@
+.team-slide { display: none;}
+
+/* Three people */
+
+#team1, #team2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10vw;
+}
+
+/* Two people */
+
+#team3, #team4 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10vw;
+}
+
+.frame {
+	border-radius: 20px;
+	/* Color */
+	background-color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.frame div *{
+	margin: 2.5vh auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.frame div img {
+	border-radius: 100%;
+	object-fit: cover;
+	padding: 10px 0;
+	height: 100px;
+	width: 100px;
+}
+
+.frame div p {
+	padding-bottom: 10px;
+}
