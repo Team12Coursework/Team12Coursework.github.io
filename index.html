@@ -1,348 +1,97 @@
 <html>
 <head>
-<title>CharacterConnect - The Game</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;900&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="scripts.js"></script>
 </head>
 <body>
-
 <header>
-	<div id="top-bar">
-		<a href="index.html">
-			<img id="logo" src="img/teamLogo.png"/>
-		</a>
-		<nav>
-			<a href="#about">Game</a>
-			<a href="#gameplay">Media</a>
-			<a href="#rules">Rules</a>
-			<a href="#team">Our Team</a>
-			<a href="#blog">Blog</a>
-			<a href="https://team12coursework.herokuapp.com/login/login">Login</a>
-			<a href="https://team12coursework.herokuapp.com/register/register">Register</a>
-		</nav>
-		<button id="menu-toggle">
-			<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-		</button>
-		<div class="social">
-			<div>
-				<a href="https://www.facebook.com/profile.php?id=100075003755577" target="_blank" class="fb"><img src="img/fb.png" /></a>
-			</div>
-			<div>
-				<a href="https://twitter.com/CC0nnect" target="_blank"  class="twitter"><img src="img/twitter.png" /></a>
-			</div>
-		</div>
-	</div>
+
 </header>
+<main>
+  <div id="content">
+    <section class="basic-info">
+      <div class="slideshow">
+        <img src="website.jpg">
+      </div>  
+      <div class="think-to-play">
+        <h2>Connecting education and entertainment through words.</h2>
+        <p>Experience entertainment and education in one package. Play Character Connect for free by registering.</p>
+        <a href="https://team12coursework.herokuapp.com">  <h2> Click to play </h2></a> 
 
-<section id="top-view" class="full-height">
-	<div id="top-bg"></div>
-	<img id="top-tiles" src="img/tiles.png" style="">
-	<div class="container">
-		<div>
-			<img src="logo.jpg" />
-		</div>
-		<div>
-			<h1>Connecting education and entertainment through words</h1>
-			<p>Experience entertainment and education in one package. Play Character Connect for free by registering.</p>
-		</div>
-		<div style="display: flex;justify-content: center;">
-			<a href="https://team12coursework.herokuapp.com" title="Click to Play">PLAY</a>
-		</div>
-	</div>
-</section>
-
-<section id="about" class="full-height">
-	<div class="container">
-		<h2>Game</h2>
-		<p>CharacterConnect is a turn-based multiplayer word game inspired by Scrabble, where you can test your wits against other players by creating words to score points. Compete with friends in an interactive environement, and ascend the leaderboard. Additional game modes and features coming soon.</p>
-		<div class="about-icons">
-			<div class="about-icon">
-				<div class="icon">
-					<img src="img/scrabble.png" />
-				</div>
-				<h3>Be creative</h3>
-			</div>
-			<div class="about-icon">
-				<div class="icon">
-					<img src="img/fun.png" />
-				</div>
-				<h3>Have fun</h3>
-			</div>
-			<div class="about-icon">
-				<div class="icon">
-					<img src="img/compete.png" />
-				</div>
-				<h3>Compete</h3>
-			</div>
-			<div class="about-icon">
-				<div class="icon">
-					<img src="img/learn.png" />
-				</div>
-				<h3>Learn</h3>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="gameplay" class="full-height">
-	<div class="container">
-		<h2>Media</h2>
-		<div>
-			<div class="gameplay-buttons">
-				<div class="space"></div>
-				<button onclick="moveImagesLeft()">
-					<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"/></svg>
-				</button>
-				<button onclick="moveImagesRight()">
-					<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-				</button>
-			</div>
-			<div class="gameplay-images">
-				<div data-c='0'>
-					<img src="img/gameplay-1.jpeg"/>
-					<img src="img/gameplay-1.jpeg"/>
-					<img src="img/gameplay-1.jpeg"/>
-					<img src="img/gameplay-1.jpeg"/>
-					<img src="img/gameplay-1.jpeg"/>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="rules" class="full-height">
-	<div class="container">
-		<h2>Rules</h2>
-		<h3>Rule 1.</h3>
-		<p>
-			The first player combines two or more of their letters to form a word and places it on the board to read either across or down with one letter on the center square. Diagonal words are not allowed.
-		</p>
-		<h3>Rule 2.</h3>
-		<p>
-			When your turn is completed you will see your score for that turn. Then automatically you will draw as many new letters as you played; you will always have seven letters on your rack, if there are enough letters left.
-		</p>
-		<h3>Rule 3.</h3>
-		<p>
-			Play passes to the left. The second player, and then each in turn, adds one or more letters to those already played to form new words. All letters played on a turn must be placed in one row across or down the board, to form at least one complete word. If, at the same time, they touch other letters in adjacent rows, those must also form complete words, like in a crossword, with all such letters. The player gets full credit for all words formed or modified on his or her turn.
-		</p>
-		<h3>Rule 4.</h3>
-		<p>
-			New words may be formed by adding one or more letters to a word or letters already on the board.Adding a word at right angles to a word already on the board. The new word must use one of the letters already on the board or must add a letter to it.
-		</p>
-		<h3>Rule 5.</h3>
-		<p>
-			No letter can be changed after it has been played and scored.
-		</p>
-		<h3>Rule 6.</h3>
-		<p>
-			Blanks: The two blank tiles may be used as any letters. When playing a blank, you must choose which letter it represents. It remains that letter for the rest of the game.
-		</p>
-		<h3>Rule 7.</h3>
-		<p>
-			You may use a turn to exchange all, some, or none of the letters. To do this, place your discarded letter(s) facedown. Draw the same number of letters from the pool, then mix your discarded letter(s) into the pool. This ends your turn.
-		</p>
-		<h3>Rule 8.</h3>
-		<p>
-			The game ends when all letters have been drawn and one player uses his or her last letter; or when all possible plays have been made.
-		</p>
-	</div>
-</section>
-
-<section id="team" class="full-height">
-	<div class="container">
-		<h2>Our Team</h2>
-		<div class="team-members">
-			<div class="team-member">
-				<img src="img/zaieed.jpg"/>
-				<h3>Zaieed</h3>
-				<h4>Website developer </h4>
-			</div>
-			<div class="team-member">
-				<img src="img/Atif.png"/>
-				<h3>Atif</h3>
-				<h4>Security Specialist</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/Gurdeep.png"/>
-				<h3>Gurdeep</h3>
-				<h4>Front-end Programmer</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/Harry.png"/>
-				<h3>Harry</h3>
-				<h4>Lead Programmer</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/Jimmy.png"/>
-				<h3>Jimmy</h3>
-				<h4>Content Creator</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/perry.png"/>
-				<h3>Perry</h3>
-				<h4>Front-end Programmer</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/Qasim.png"/>
-				<h3>Qasim</h3>
-				<h4>Social Media Specialist</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/sufyan.jpg"/>
-				<h3>Sufyan</h3>
-				<h4>Back-end Programmer</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/usman.jpg"/>
-				<h3>Usman</h3>
-				<h4>Back-end Programmer</h4>
-			</div>
-			<div class="team-member">
-				<img src="img/Amaan.png"/>
-				<h3>Amaan</h3>
-				<h4>Front-end Programmer</h4>
-			</div>
-		</div>
-		<!--<link href = "StyleSlideshow.css" rel = "stylesheet"/>
-		<div id = "team-slideshow">
-			<div class = "team-slide" id = "team1">
-				<div class = "frame">
-					<div id = "Harry">
-						<img src = "img/Harry.png">
-						<h3>Harry.L</h3>
-						<p>Lead Programmer</p>
-					</div>
-				</div>
-
-				
-
-				<div class = "frame">
-					<div id = "Zaieed">
-						<img src = "img/Zaieed.jpg">
-						<h3>Zaieed.H</h3>
-						<p>Website Developer</p>
-					</div>
-				</div>
-				<div class = "frame">
-					<div id = "Atif">
-						<img src = "img/Atif.png">
-						<h3>Atif.A</h3>
-						<p>Security Specialist</p>
-					</div>
-				</div>
-			</div>
-
-			<div class = "team-slide" id = "team2">
-				<div class = "frame">
-					<div id = "Amaan">
-						<img src = "img/Amaan.png">
-						<h3>Amaan.A</h3>
-						<p>Front-end Programmer</p>
-						</div>
-					</div>
-
-				<div class = "frame">
-					<div id = "Gurdeep">
-						<img src = "img/Gurdeep.png">
-						<h3>Gurdeep.S</h3>
-						<p>Front-end Programmer</p>
-					</div>
-				</div>
-
-				<div class = "frame">
-					<div id = "Perry">
-						<img src = "img/Perry.png">
-						<h3>Perry.E</h3>
-						<p>Front-end Programmer</p>
-					</div>
-				</div>
-			</div>
-
-			<div class = "team-slide" id = "team3">
-
-				<div class = "frame">
-					<div id = "Sufyan">
-						<img src = "img/Sufyan.jpg">
-						<h3>Sufyan.H</h3>
-						<p>Back-end Programmer</p>
-					</div>
-				</div>
-
-				<div class = "frame">
-					<div id = "Usman">
-						<img src = "img/Usman.jpg">
-						<h3>Usman.S</h3>
-						<p>Back-end Programmer</p>
-					</div>
-				</div>
-			</div>
-
-			<div class = "team-slide" id = "team4">
-				<div class = "frame">
-					<div id = "Jimmy">
-						<img src = "img/Jimmy.png">
-						<h3>Jimmy.C</h3>
-						<p>Content creator</p>
-					</div>
-				</div>
-
-				<div class = "frame">
-					<div id = "Qasim">
-						<img src = "img/Qasim.png">
-						<h3>Qasim.M</h3>
-						<p>Social Media Specialist</p>
-					</div>
-				</div>
-
-			</div>
-
-			<script src = "ScriptSlideshow.js"></script>-->
-
-		</div>
-	</div>
-</section>
-
-<section id="blog" class="full-height">
-	<div class="container">
-		<h2>Blog</h2>
-		<div class="blog-buttons">
-			<div class="space"></div>
-				<button onclick="movePostsLeft()">
-					<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"/></svg>
-				</button>
-				<button onclick="movePostsRight()">
-					<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
-				</button>
-			</div>
-		<div class="blog-posts">
-			<div data-c='0'>
-				<a class="blog-post" href="blog/article1.html" target="_blank">
-					<img src="img/future.png" />
-					<h3>Our Future</h3>
-					<p>All things said, our website is still being development. We hope to polish it as progress towards...</p>
-				</a>
-				<a class="blog-post" href="blog/article2.html" target="_blank">
-					<img src="blog/Post2.png" />
-					<h3>In the Making</h3>
-					<p>Our front-end and back-end game; teams have been hard at work for the past few weeks...</p>
-				</a>
-				<a class="blog-post" href="blog/article3.html" target="_blank">
-					<img src="blog/Landing.JPG" />
-					<h3>Landing</h3>
-					<p>The landing page was designed to be simple and intuitive to use, containing everything they need to jump straight into a game...</p>
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
-
+      </div>
+    </section>
+    <section class="gameplay">
+        <h2>Gameplay</h2>
+        <div>
+          <a href="Post2.html">
+            <img src="0kZO8.jpg">
+            <div>
+              <div>John Smith</div>
+              <div>vs</div>
+              <div>Garry Kane</div>
+            </div>
+          </a>
+          <a href="Post2.html">
+            <img src="0kZO8.jpg">
+            <div>
+              <div>John Smith</div>
+              <div>vs</div>
+              <div>Garry Kane</div>
+            </div>
+          </a>
+          <a href="Post2.html">
+            <img src="0kZO8.jpg">
+            <div>
+              <div>John Smith</div>
+              <div>vs</div>
+              <div>Garry Kane</div>
+            </div>
+          </a>
+        </div>
+    </section>
+  </div>
+<body>
 <footer>
-	
-</footer>
+<div class ="container">
+<div class ="row">
+<div class = "footer-col">
+<h3>Game info</h3>
 
+<ul>
+    <li><a href="Support.html">Support</a></li>
+    <li><a href="GameRules.html">Game rules</a></li>
+</ul>
+
+  </div>
+  <div class ="footer-col">
+	<h3>The team</h3>
+<ul>
+    <li><a href="about-us.html">About Us</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Blog.html">Blog</a></li>
+</ul>
+  </div>
+  <div class = "footer-col">
+	<h3>Help</h3>
+<ul>
+
+     <li><a href="FAQ.html">FAQ</a></li>
+     <li><a href="Terms of Service.html">Terms of Service</a></li>
+</ul>
+</div>
+<div class= "footer-col">
+<h3> Follow us</h3>
+<div class="socialmedias">
+<a href=https://www.facebook.com/profile.php?id=100075003755577
+><img src= "facebook.png"></a>
+<a href="https://twitter.com/CC0nnect" ><img src="twitter.png"></a>
+
+  </div>
+</footer>
 </body>
 </html>
+</main>
