@@ -1,500 +1,747 @@
-*, *:before, *:after{
-	box-sizing: border-box;
+*, *:before, *:after {
+  box-sizing: border-box;
+  transition: 0.3s all;
 }
-
 html{
 	font-family: 'Poppins', sans-serif;
+	--scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
-
-h1{
-    text-align: center;
-  margin: 0;
-  padding: 0;
-
-}
-
-
 body{
-	min-height: 100vh;
-	width: 100%;
-	display: flex;
 	margin: 0;
-	padding: 0;
+}
+h2{
+	color: black;
+	font-size: 4em;
+	text-align: center;
+}
+header{
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	background: #EE6352;
+	transition: 0.3s all;
+}
+body.blog header{
+	background: white;
+}
+body.blog h3{
+	text-align: center;
+}
+body.blog video{
+	width: 100%;
+}
+body.blog #breadcrumbs{
+	padding-top: 6em;
+	display: flex;
+    align-items: center;
+}
+.container{
+	max-width: 88em;
+	margin: auto;
+	padding: 1em;
+}
+#top-bar{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	/* Changes: Padded top-bar for aesthetics */
+	padding: 1em 1em;
+	/* Change end */
+}
+header #logo{
+	max-height: 3em;
+	width: auto;
+}
+
+/* Changes: Animate teamLogo */
+header #logo:hover{
+	opacity: 0.75;
+	transform: translate(0, 2px);
+}
+/* Change end */
+
+header nav a{
+	margin: 0 1em;
+	color: white;
+	text-decoration: none;
+	/* Changes: Transition */
+	transition: all .25s ease-in-out;
+	/* Change end */
+}
+
+body.blog header nav a{
+	color: black;
+}
+body.blog h2{
+	text-align: center;
+	margin: 0.5em 0;
+}
+body.blog #blog .container img{
+	width: 100%;
+	height: 10em;
+	object-fit: cover;
+	margin-bottom: 2em;
+}
+body.blog .content{
+	margin: auto;
+	max-width: 40em;
+}
+.social{
+	position: fixed;
+	right: 0;
+	overflow: hidden;
+	top: 8em;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+.social a{
+	margin-bottom: 0.5em;
+	padding: 0.2em 0.2em;
+	display: inline-block;
+	justify-content: flex-start;
+	border-radius: 4em 0 0 4em;
+	width: 2.5em;
+}
+
+.social a:hover{
+	width: 4em;
+}
+.social img{
+	height: 2em;
+	width: auto;
+}
+.social .fb{
+	background: #45619d;
+}
+.social .twitter{
+	background: #00b3e0;
+}
+.full-height{
+	min-height: 100vh;
+}
+header #top-bar.opened{
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+#top-view,
+header #top-bar.opened nav{
+	background:#EE6352;
+}
+
+#top-view{
+	background: transparent;
+}
+
+#about{
+	background: white;
+}
+
+#top-view > div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+    height: 100%;
+    padding-top: 8em;
+    text-align: center;
+}
+
+#top-view > div a{
+	box-shadow: none;
+    background: none;
+    border: 2px solid white;
+    padding: 0.5em 2em;
+    font-size: 2em;
+    border-radius: 1em;
+    color: white;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+/* Changes: Fixed margin spacing issue with larger screen resolution. */
+#top-view .container div {
+	margin: auto;
+}
+/* Change end */
+
+#top-view .container div h1,
+#top-view .container div p{
+	color: white;
+}
+
+#top-view > div a:hover{
+	background: #3FA7D6;
+}
+
+.header-font{
+	font-size: 10em;
+	color: white;
+	font-weight: bold;
+}
+
+header.about,
+header.about #top-bar.opened nav{
+	background: #59CD90;
+}
+
+header.about a{
+	color: black;
+}
+
+/* Changes: Underline when scrolled to section */
+header.about nav a:nth-child(1) {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: black;
+}
+/* Change end */
+
+header.gameplay,
+header.gameplay #top-bar.opened nav{
+	background: #3FA7D6;
+}
+
+header.gameplay a{
+	color: white;
+}
+
+/* Changes: Underline when scrolled to section */
+header.gameplay nav a:nth-child(2) {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: white;
+}
+/* Change end */
+
+header.rules,
+header.rules #top-bar.opened nav{
+	background: #FAC05E;
+}
+
+header.rules a{
+	color: black;
+}
+
+/* Changes: Underline when scrolled to section */
+header.rules nav a:nth-child(3) {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: black;
+}
+/* Change end */
+
+header.team,
+header.team #top-bar.opened nav{
+	background: #F79D84;
+}
+
+header.team a{
+	color: black;
+}
+
+/* Changes: Underline when scrolled to section */
+header.team nav a:nth-child(4) {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: black;
+}
+/* Change end */
+
+#about h2,
+#gameplay h2,
+#team h2,
+#rules h2,
+body:not(.blog) #blog h2{
+	padding-top: 1em;
+}
+
+.about-icons{
+	margin-top: 6em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+.about-icon{
+	width: calc(25% - 3em/4);
+	text-align: center;
+}
+
+.about-icon .icon img{
+	width: 10em;
+	height: 10em;
+	text-align: center;
+}
+
+.about-icon h3{
+	text-align: center;
+}
+
+#gameplay .gameplay-buttons,
+#blog .blog-buttons{
+	display: flex;
+	gap: 1em;
+}
+
+#gameplay .gameplay-buttons .space,
+#blog .blog-buttons .space{
+	flex-grow: 1;
+}
+
+#gameplay .gameplay-images,
+#blog .blog-posts{
+	margin-top: 2em;
+	overflow-x: hidden;
+}
+
+#gameplay .gameplay-images > div,
+#blog .blog-posts > div{
+	display: flex;
+	transition: 0.3s all;
+	gap: 1em;
+}
+
+/* Changes: Applied to videos as well + aspect ratio is now 16:9 */
+#gameplay .gameplay-images img, video{
+	height: 28.125em;
+	width: 50em;
+	object-fit: cover;
+}
+/* Change end */
+
+#gameplay button,
+#blog button{
+	height: 4em;
+	width: 4em;
+	color: white;
+	background: black;
+	border-radius: 50%;
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
+	border: 0.4em solid white;
+	transition: 0.3s all;
+}
+
+#gameplay button:hover,
+#blog button:hover{
+	background: white;
+	border-color: black;
+}
+
+#gameplay button svg,
+#blog button svg{
+	fill: white;
+	transition: 0.3s all;
+}
+
+#gameplay button:hover svg,
+#blog button:hover svg{
+	fill: black;
+}
+
+.team-members{
+	display: flex;
+}
+
+.team-member{
+	width: 20px;
+	overflow: hidden;
+	transition: 2s all;
+	text-align: center;
+}
+
+.team-member.active{
+	width: calc(100% - 160px);
+}
+
+.team-member img{
+	/*width: 100%;*/
+	height: 400px;
+	text-align: center;
+	/*object-fit: cover;*/
+	object-position: top;
+}
+
+.team-member h3{
+	margin-bottom: 0;
+	font-size: 1px;
+	transition: 0.3s all;
+}
+
+.team-member.active h3{
+	font-size: 1em;
+}
+
+.team-member h4{
+	/* Changes: Color for visibility */
+	color: grey;
+	/* Change end */
+    font-weight: normal;
+    margin: 0;
+    font-size: 1px;
+}
+
+.team-member.active h4{
+	font-size: 0.8em;
+}
+
+#menu-toggle{
+	display: none;
+	background: none;
+	box-shadow: none;
+	border: none;
+	cursor: pointer;
+}
+
+#menu-toggle svg{
+	fill: white;
+}
+
+#top-view img{
+	height: 7em;
+}
+
+#top-view img#top-tiles{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	animation-name: tilesMove;
+  	animation-duration: 10s;
+  	animation-timing-function: ease-in-out;
+  	animation-iteration-count: infinite;
+	object-fit: cover;
+	z-index: -1;
+}
+#top-bg{
+	background: #EE6352;
+	top:0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -2;
+}
+@keyframes tilesMove{
+  0% {top: 0;}
+  50% {top: 30px;}
+  100% {top: 0px;}
+}
+/* Changes: Removed round borders for consistency + hover effect for blog posts + img rescaling removed so images aren't weirdly zoomed in. */
+.blog-post{
+	width: 20em;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 0;
+	flex-shrink: 0;
+	padding: 1em;
+	text-decoration: none;
+	color: black;
+}
+.blog-post img{
+	object-fit:cover;
+}
+.blog-post:hover{
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	transform: translate(0, -10px);
+}
+/* Change end */
+
+header nav a{
+	transition: 0.3s all;
+}
+
+/* Changes: Hover effect */
+header nav a:hover{
+	opacity: 0.5;
+}
+/* Change end */
+
+@media only screen and (max-width: 1220px) {
+
+  .header-font{
+	font-size: 5em;
+	color: white;
+	font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .about-icon{
+  	width: calc(50% - 1em/2);
+  }
+  #top-view img{
+  	display: none;
+  }
+
+  .team-member {
+    width: calc(100%/3 - 2em/3);
+  }
+  #menu-toggle{
+	display: flex;
+  }
+  #top-bar nav{
+  	display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5em;
+    left: 0;
+    right: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  #top-bar.opened nav{
+	height: auto;
+	padding: 1em;
+  }
+  #gameplay .gameplay-images img{
+  	height: 23em;
+  	width: 30em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .team-member {
+    width: calc(100%/2 - 1em/2);
+  }
+  
+  #gameplay .gameplay-images img{
+  	height: 16em;
+  	width: 21em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h2{
+  	font-size: 3em;
+  }
+  #gameplay .gameplay-images img{
+  	height: 12em;
+  	width: 17em;
+  }
+  .team-member {
+    width: 100%;
+  }
+  .about-icon{
+  	width: 100%;
+  }
+}
+
+/* Changes: Hide scroll bar */
+*::-webkit-scrollbar {
+	display: none;
+}
+
+* {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+/* Change end */
+
+/* Changes: Added animation for appearance of specified classes */
+.appear {
+	position: relative;
+	opacity: 0;
+}
+
+/* When appear function is called */
+.appear.trigger {
+	opacity: 1;
+}
+
+/* Transformation transitions for smoothness */
+.trigger.fade-left {
+	animation: fade-left .5s ease-in-out;
+}
+
+.trigger.fade-right {
+	animation: fade-right .5s ease-in-out;
+}
+
+/* Transformations */
+@keyframes fade-left {
+	0% {
+		transform: translateX(-200px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+	0% {
+		transform: translateX(200px);
+		opacity: 0;
+    }
+    100% {
+		transform: translateX(0);
+		opacity: 1;
+    }
+}
+
+/* Change end */
+
+/* Changes: Text shadow for top-view + imgs can no longer be highlighted */
+#top-view p, #top-view h1 {
+	text-shadow: 1px 1px #EE6352;
+}
+
+img {
+	user-select: none;
+}
+/* Change end */
+
+/* Changes: Footer section containing redirect links + other socials + copyright disclaimer */
+
+footer {
+	color: white;
+	background: #DA8492;
+	box-shadow: 3px 0 10px rgb(0 0 0 / 0.2);
+}
+
+footer div {
+	display: flex;
+	flex-direction: row;
+
+}
+
+footer div div{
+	display: flex;
 	flex-direction: column;
 }
 
-header, footer{
-	display: flex;
-	align-items: center;
-	background: rgba(243, 244, 246, 1);
-	color: black;
+#footer-logo{
+	width: 25em;
+	padding: 2em 0;
+	opacity: .8;
+}
+
+.footer-right {
 	width: 100%;
-	padding: 1em 2em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.logo{
-	flex-grow: 1;
-}
-
-.logo img{
-	max-width: 450px;
-	height: auto;
-  margin-right: 70em;
- display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.Team img{
-  max-width: 150px;
-  height: 100;
-margin-right: 1em;
-}
-nav ul{
 	display: flex;
-	align-items: center;
-	margin: 0;
-	padding: 0;
+	justify-content: center;
+    align-items: center;
+	background: #ED9377;
 }
 
-nav li{
-	margin: 0 1em;
-	padding: 0;
-	list-style: none;
+.footer-right div {
+	flex-direction: row;
 }
 
-header a, footer a{
-  color: black;
-  text-decoration: none;
-  font-weight: 700;
+.footer-right div a{
+	margin: 0 1.5em;
+	opacity: 0.75;
 }
 
-header .logo a{
-  font-size: 18px;
-  display: flex;
+.footer-right div a:hover{
+	transform: scale(1.5);
+	opacity: 1;
 }
 
-header nav a, footer a{
-  font-size: 12px;
-
+.footer-right a img{
+	width: 30px;
 }
 
-main{
-	flex-grow: 1;
+.footer-left {
+	width: 15vw;
+	margin: 1em 1em;
 }
 
-#play_btn{
-  position: absolute;
-  z-index: 10;
-  top:50%;
-  left:50%;
-  background-color: red;
-  padding: 1em 2em;
-  color: white;
-  border: 2px solid white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transform: translate(-50%, -50%);
-  transition: 0.3s all;
+.footer-left img{
+	padding-top: 1em;
+	margin: auto;
+	width: 5em;
+	opacity: .8;
 }
 
-#play_btn:hover{
-  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  transform: scale(1.2) translate(-40%, -40%);
+#footer-list {
+	width: 100%;
+	/* Color */
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	padding: 5% 0;
 }
 
-.basic-info, .gameplay, .blog-posts{
-  margin: 2em;
-  display: flex;
+.list-item {
+	display: block;
+	width: 100%;
+	height: 3em;
+	position: relative
 }
 
-.gameplay{
-  flex-direction: column;
-}
-
-.gameplay > div{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-}
-
-.gameplay > div > a{
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: black;
-  text-decoration: none;
-}
-
-.gameplay > div > a > div{
-  padding: 0.5em;
-  display: flex;
-}
-
-.gameplay > div > a > div > div{
-  flex-basis: 100%;
-  text-align: center;
-}
-
-/* Blog stuff */
-
-.blog-posts{
-  flex-direction: column;
-}
-
-.blog-posts > div{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-}
-
-.blog-posts > div > a{
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: black;
-  text-decoration: none;
-}
-
-.blog-posts > div > a > img{
-  padding-top: 1em;
-}
-
-.blog-posts-upper{
-  display: flex;
-  padding: 0.5em 25px;
-  gap: 10px;
-}
-
-.blog-posts-upper > div{
-  padding: 0 5px;
-}
-
-.blog-posts-date {
-  background-color: rgb(173, 216, 230);
-}
-
-.blog-posts-monthly {
-  background-color: rgb(240, 128, 128);
-}
-
-.blog-posts-future {
-  background-color: rgb(203, 195, 227);
-}
-
-.blog-posts-lower {
-  padding: 0 25px 0.5em 25px;
-}
-
-.blog-posts-title {
-  font-weight: bold;
-}
-
-/* Blog stuff end */
-
-/* Post stuff */
-
-.post-container {
-  box-shadow: 16px 23px 52px 0px rgb(0 0 0 / 12%);
-  padding: 1em 6em;
-  margin: auto;
-  margin-bottom: 2em;
-  margin-top: 1em;
-  border-radius: 2em;
-  transition: 0.3s all;
-  background:white;
-  max-width: 1200px;
-}
-
-.post-container > h2, p {
-  text-align: center;
-}
-
-.post-container > video, img {
-  display: block;
-  margin: 0 auto;
-}
-
-.post-container:hover{
-  box-shadow: 1px 3px 15px grey;
-}
-/* Post stuff end */
-
-/* Contact Us stuff */
-
-.contact-container {
-  display: flex;
-  border-radius: 2em;
-  padding: 2em;
-  flex-direction: column;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: black;
-  text-decoration: none;
-  margin-top: 2em;
-  text-align: center;
-}
-
-.contact-container:hover{
-  box-shadow: 1px 3px 15px grey;
-}
-
-.contact-info {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  margin-left: 100px;
-  grid-gap: 10px;
-}
-
-.career-info {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  margin-left: 100px;
-  grid-gap: 10px;
-}
-
-.contacts {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  grid-gap: 10px;
-}
-
-.contacts > p{
-  display: block;
-  text-align: left;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-/* Contact Us stuff end */
-
-.basic-info > div{
-  width: 50%;
-}
-
-.think-to-play{
-  padding: 2em;
-}
-
-.think-to-play a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1em;
-  border: 1px solid #c4c4c4;
-  text-decoration: none;
-  color: black;
-  transition: 0.3s all;
-  width: 90%;
-  
-}
-
-.think-to-play a:hover{
-  border-color: red;
-}
-
-.slideshow img,
-.gameplay img,
-.blog-posts img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.gameplay img, .blog-posts img{
-  height: 300px;
-  object-fit: contain;
-}
-.AboutUs img{
-  height: 300px;
-  object-fit: contain;
-}
-
-.gameplay > div.guys{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-}
-
-.guys .guy{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.guys .guy img{
-  margin-bottom: 1em;
-  border-radius: 100%;
-  display: flex;
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
+.list-item div{
+	display: flex;
+	flex-direction: row;
 }
 
 
-footer > div{
-  display: flex;
-  flex-direction: column;
-  margin-right: 2em;
+.list-item:not(:last-child) {
+	margin-bottom: 5%;
 }
-.main-container{
-  text-align:justify;
-  max-width: 1200px;
-  margin: auto;
-}
-.main-container img{
-  object-fit: contain;
-  width: 100%;
-  max-height: 200px;
-}
-.some-container{
-  box-shadow: 16px 23px 52px 0px rgb(0 0 0 / 12%);
-  padding: 1em;
-  margin: 1em;
-  border-radius: 2em;
-  transition: 0.3s all;
-  background:white;
-}
-.some-container:hover{
-  box-shadow: 1px 3px 15px grey;
-  
-}
-.end-footer {
-  width: 100%;
-  display: inline-block;
-  background-color: #032f3c;
-  font-family: 'Roboto Slab', serif;
-  padding: 5px;
-  color: black;
-  text-align: center;
-  font-size: 1.2em;
-}
-.footer{
-}
-.container{
-  max-width: 1170px;
-  margin: auto;
-  width: 100%;
-}
-ul{
-  list-style: none;
-}
-.row{
-  display:flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.footer-col {
-width: 25%;
-padding :0 15px;
-}
-.footer-col h3{
-font-size:  18px;
-color: #000000;
-text-transform: capitalize;
-margin-bottom: 30px;
-}
-.footer-col h3:: before{
-  content: "";
-  position: absolute;
-  bottom: -10px;
- height: 2px;
- box-sizing: border-box;
- width: 50px;
-
-}
-
-
-
-.footer{
  
-    padding: 70px 0;
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-/*color for the header of the section.*/
-.footer-col h3{
-  font-size: 18px;
-  color: #000000;
-  text-transform: capitalize;
-  margin-bottom: 35px;
-  font-weight: 500;
-  position: relative;
-}
-/* line underneath the header of the section*/
-.footer-col h3::before{
-  content: '';
-  position: absolute;
-  left:0;
-  bottom: -10px;
-  background-color: #e91e63;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
-}
-.footer-col ul li:not(:last-child){
-  margin-bottom: 10px;
-}
-.footer-col ul li a{
-  font-size: 16px;
-  text-transform: capitalize;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300;
-  color: #000000;
-  display: block;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-/*changes colour to when hovered*/
-.footer-col ul li a:hover{
-  color: #e91e63;
-  padding-left: 8px;
-}
-.footer-col .social-links a{
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255,255,255,0.2);
-  margin:0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  color: #ffffff;
-  transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-  color: #24262b;
-  background-color: #ffffff;
+.list-item:hover .list-slider{
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 }
 
-footer ul{
-  padding: 0;
-  margin: 0;
+.list-container {
+	width: 90%;
+	height: 100%;
+	left: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: absolute;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	cursor: pointer;
 }
 
-.page-contact img{
-  max-height: 100px;
-  object-fit: contain;
+.list-slider {
+	height: 2.5px;
+	/* Color */
+	background: #FFCDFF;
+	-webkit-transition: all .3s;
+	transition: all .3s;
 }
 
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
+.list-title {
+	margin-left: 7.5%;
 }
+
+.list-title h1{
+	/* Color */
+	color: white;
+	font-size: 15;
 }
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
+
+/* Change end */
+
+/* Changes: Fixed assets from articles (blog pages) */
+#blog-page img {
+	width: 100%;
 }
+
+#blog-page video {
+	height: 22.5em;
 }
+/* Change end */
